@@ -16,6 +16,7 @@ table, th, td {
 <body ng-controller = "MovieController as movieCtrl" >
 	<div>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.js"></script>
 		<!--<script type="text/javascript" src="angular.min.js"></script>-->
 	<script type="text/javascript" src="/app_new.js"></script>
 	<h1>Movie Recommendation</h1>
@@ -76,6 +77,21 @@ table, th, td {
               Genre<input ng-model="newMovieGenre" type="text" name="Genre" class="w3-input" required/><br>
               Synopsis<textarea ng-model="newMovieSynopsis" class="w3-input" required></textarea><br>
               <input type="submit" value="Submit" class="w3-button w3-green"/>
+			<div ng-messages="movieForm.Title.$error" role="alert">
+				<div ng-message="required">Please enter value for [movie title] field</div>
+			</div>
+			<div ng-messages="movieForm.ReleaseDate.$error" role="alert">
+				<div ng-message="required">Please enter value for [Release date] field</div>
+			</div>
+			<div ng-messages="movieForm.Duration.$error" role="alert">
+				<div ng-message="required">Please enter value for [Duration] field</div>
+			</div>
+			<div ng-messages="movieForm.Genre.$error" role="alert">
+				<div ng-message="required">Please enter value for [Genre] field</div>
+			</div>
+			<div ng-messages="movieForm.Synopsis.$error" role="alert">
+				<div ng-message="required">Please enter value for [Synopsis] field</div>
+			</div>
 		</form>
         </div>
 	</p>
